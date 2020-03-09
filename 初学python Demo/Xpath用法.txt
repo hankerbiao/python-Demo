@@ -1,0 +1,110 @@
+xpath简单调用方法
+from lxml import etree
+selector=etree.HTML(源码)  #将源码转化为能被XPath匹配的格式
+selector.xpath(表达式)  #返回为一列表
+
+-------------------------------------------------------
+实例讲解
+from lxml import etree
+html="""
+    <!DOCTYPE html>
+    <html>
+        <head lang="en">
+        <title>测试</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        </head>
+        <body>
+            <div id="content">
+                <ul id="ul">
+                    <li>NO.1</li>
+                    <li>NO.2</li>
+                    <li>NO.3</li>
+                </ul>
+                <ul id="ul2">
+                    <li>one</li>
+                    <li>two</li>
+                </ul>
+            </div>
+            <div id="url">
+                <a href="http:www.58.com" title="58">58</a>
+                <a href="http:www.csdn.net" title="CSDN">CSDN</a>
+            </div>
+        </body>
+    </html>
+"""
+selector=etree.HTML(html)
+content=selector.xpath('//div[@id="content"]/ul[@id="ul"]/li/text()') #这里使用id属性来定位哪个div和ul被匹配 使用text()获取文本内容
+for i in content:
+    print i
+#输出为
+NO.1
+NO.2
+NO.3
+
+con=selector.xpath('//a/@href') #这里使用//从全文中定位符合条件的a标签，使用“@标签属性”获取a便签的href属性值
+for each in con:
+    print each
+#输出结果为：
+http:www.58.com
+http:www.csdn.net
+
+con=selector.xpath('/html/body/div/a/@title') #使用绝对路径定位a标签的title
+con=selector.xpath('//a/@title') #使用相对路径定位 两者效果是一样的
+print len(con)
+print con[0]con[1]
+
+#输出结果为：
+2
+58 CSDN
+------------------------------------------------------
+介绍XPath的特殊用法：
+1) starts-with 解决标签属性值以相同字符串开头的情况
+
+举例说明
+
+from lxml import etree
+html="""
+    <body>
+        <div id="aa">aa</div>
+        <div id="ab">ab</div>
+        <div id="ac">ac</div>
+    </body>
+    """
+selector=etree.HTML(html)
+content=selector.xpath('//div[starts-with(@id,"a")]/text()') #这里使用starts-with方法提取div的id标签属性值开头为a的div标签
+for each in content:
+    print each
+#输出结果为：
+aa
+ab
+ac
+
+------------------------------------------------
+html="""
+    <div id="a">
+    left
+        <span id="b">
+        right
+            <ul>
+            up
+                <li>down</li>
+            </ul>
+        east
+        </span>
+        west
+    </div>
+"""
+#下面是没有用string方法的输出
+sel=etree.HTML(html)
+con=sel.xpath('//div[@id="a"]/text()')
+for i in con:
+    print i   #输出内容为left west
+
+data=sel.xpath('//div[@id="a"]')[0]
+info=data.xpath('string(.)')
+content=info.replace('\n','').replace(' ','')
+for i in content:
+    print i #输出为 全部内容
+
+---------------------
+
