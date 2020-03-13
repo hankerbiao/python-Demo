@@ -9,10 +9,10 @@ picture_url = driver.get_screenshot_as_file('a.png', )
 time.sleep(2)
 driver.find_element_by_xpath(
     '/html/body/table/tbody/tr/td/table[3]/tbody/tr[1]/td[2]/form/table/tbody/tr[2]/td/table/tbody/tr[1]/td[2]/input').send_keys(
-    '1707100219')
+    '')
 driver.find_element_by_xpath(
     '/html/body/table/tbody/tr/td/table[3]/tbody/tr[1]/td[2]/form/table/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/input').send_keys(
-    'hanker9527')
+    '')
 location = driver.find_element_by_id('vchart').location
 size = driver.find_element_by_id('vchart').size
 left = location['x']

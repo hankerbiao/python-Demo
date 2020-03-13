@@ -33,4 +33,3 @@ print (u'并行耗时：' + str(time4-time3))
 #pool 封装了 map的使用方法 所以先导入 from multiprocessing.dummy import Pool
 #Pool = Pool(计算机核数)
 #results = Pool.map(爬去函数，网址列表)
-           053
