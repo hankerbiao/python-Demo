@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数</title>
+	<script>
+
+			window.onload = function(){
+				var oBtn = document.getElementById('button1')
+				oBtn.onclick = function()
+				{				
+				var oDiv = document.getElementById('div1');
+				oDiv.style.color = 'red';
+				oDiv.style.fontSize = "30px"
+				};
+			}
+
+			// function fnChange(){				
+			// 	var oDiv = document.getElementById('div1');
+			// 	oDiv.style.color = 'red';
+			// 	oDiv.style.fontSize = "30px"
+			// }
+
+	// var aList = ['1','2','3']
+	// var sSr = aList.join('-')
+	// alert(sSr)
+	// alert(aList)
+
+
+	// for (var i = aList.length - 1; i >= 0; i--) {
+	// 	alert(aList[i])
+	// }
+
+
+	
+	window.onload=function(){
+		var oUl = document.getElementById('list')
+
+		var aList = ['美人鱼','疯狂动物城',"魔兽","美国队长3","湄公河行动"];
+		var iLen = aList.length;
+		var sTr ='';
+		for(var i=0;i<iLen;i++)
+		{
+			sTr += '<li>'+aList[i]+'</li>';
+		}
+		oUl.innerHTML = sTr;
+
+
+	}
+
+
+	</script>
+
+
+	<style>
+
+	.list{
+		list-style: none;
+		margin: 20px auto 0;
+		padding: 0;
+		width: 300px;
+		height: 300px;
+		border-bottom: 1px dotted #000;
+	}
+
+	.list li{
+		height: 60px;
+		border-bottom: 1px dotted #000;
+		line-height: 60px;
+		font-size:16px;
+	}
+
+	</style>
+
+
+
+</head>
+<body>
+	<div id="div1">这是个div标签</div>
+	<input id = "button1" type="button" value="点击" >
+	<h1>=================分割线==================</h1>
+	<ul class="list" id = "list">
+<!-- 	<li>'美人鱼'</li>
+		<li>'美人鱼'</li>
+		<li>'美人鱼'</li>
+		<li>'美人鱼'</li>
+		<li>'美人鱼'</li> -->
+	</ul>
+</body>
+</html>

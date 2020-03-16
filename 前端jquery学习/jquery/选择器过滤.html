@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src = 'js/jquery-3.4.1.min.js'></script>
+	<script>	
+		$(function(){
+			/*
+			
+			//用多次
+			var $div = $('div');
+
+			$div.css({'background-color':'gold'});
+
+			//只用一次
+			$('div').css()
+
+			*/
+					//用多次
+			var $div = $('div');
+
+			$div.css({'background-color':'gold'});
+
+			$('div').has('p').css({"color":"red","fontSize":"30px"})
+			$('div').eq(4).css({'color':'blue','text-indent':'20px'})	
+		})
+
+
+	</script>
+</head>
+<body>
+	<div>1</div>
+	<div><p>2</p></div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<div>7</div>
+	<div>8</div>
+</body>
+</html>

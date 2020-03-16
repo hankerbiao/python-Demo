@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery加载</title>
+	<script text = "text/javascript" src="js/jquery-3.4.1.js"></script>
+	<script>
+	//reade 完整写法
+	// $(document).ready(function(){
+ 	// var $div = $('#div1');
+ 	// alert("jquery弹出的div"+$div);
+	// })
+	
+	// ready简写
+	$(function(){
+		var $div = $("#div1")
+		alert("jquery弹出的div"+$div)
+		})
+
+</script>
+	
+
+</head>
+<body>
+<div id = "div1">这是一个div标签</div>	
+</body>
+</html>

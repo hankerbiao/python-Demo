@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器动画</title>
+	<script>
+
+	window.onload = function(){
+
+		var oDiv = document.getElementById('div1');
+		
+		var iLeft = 0;
+
+		//定时器
+		var timer = setInterval(function(){
+			iLeft += 20;
+			oDiv.style.left = iLeft + 'px';},30)
+
+
+	}
+
+	</script>
+
+
+
+
+	<style>
+
+	.box{
+		width: 200px;
+		height: 200px;
+		background-color: gold;
+		position: absolute;
+		left: 0;
+		top: 100px;
+
+
+	}
+
+	</style>
+</head>
+<body>
+	<div id="div1" class="box"></div>
+</body>
+</html>

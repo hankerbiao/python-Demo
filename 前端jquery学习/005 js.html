@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type = "text/javascript" >
+		//单行注释
+		/*
+			多行注释
+		 */
+		var iNum = 12;//定义数字
+		var sSr = 'nihao';//字符串
+		var iNum2 = 24,sSr2 = 'abc';//；结束
+
+		/*
+		五中基本数据类型
+		1.number 数字类型
+		2.string 字符串类型
+		3.boolean 布尔类型  true 或 false
+		4.undefined 变量声明未初始化  就是undefined
+		5.null 类型 表示空对象 占位符 在页面上获取不到对象就是null类型
+		复合类型：object
+
+
+		区分大小写
+
+		 */
+		
+
+
+		 // window.onload = function(){
+			// document.getElementById('div1').style.color = 'red';
+		 // }
+		 // 
+		 
+		 window.onload = function(){
+		 	var oDiv = document.getElementById('div1')
+		 	var oA = document.getElementById('link')
+		 	//读取属性
+		 	var sId = oDiv.id
+		 	
+		 	oA.href = "www.baidu.com"0
+		 	oA.title = "百度"
+
+
+		 }
+	</script>
+</head>
+<body>
+
+	<!--第一种嵌入js方式：行间事件 -->
+<!-- 	<input type="button" name="" value="点击" onclick="alert('hello world')"> -->
+	<h1>==============获取元素</h1>
+	<div id="div1" >这是一个div元素</div>
+	<a href="#" id="link">这是一个链接标签</a>
+<!-- 	<script>		document.getElementById('div1').style.color = 'red';</script> -->
+</body>
+
+</html>

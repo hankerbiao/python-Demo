@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器</title>
+	<script>
+		function myalert(){
+
+			alert("hello")
+		}
+		//开启一次定时器
+		var time1 = setTimeout(myalert,2000)
+		//关闭只执行一次的定时器
+		clearTimeout(time1)
+
+
+		//多次定时器
+		var time2 = setInterval(myalert,2000)
+		//关闭反复执行的定时器
+		clearInterval(time2)
+
+		// var time3 = setInterval(function(){alert("hello")},2000)
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
